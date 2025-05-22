@@ -1,0 +1,493 @@
+
+From: <Saved by Blink>
+Snapshot-Content-Location: https://networks-one.vercel.app/
+Subject: code-copy-cheat-sheet
+Date: Thu, 22 May 2025 08:50:44 +0530
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--1gfFuZKpWpH3JtqnqwzBLsX8yp9ab9QRipC5WYKt3d----"
+
+
+------MultipartBoundary--1gfFuZKpWpH3JtqnqwzBLsX8yp9ab9QRipC5WYKt3d----
+Content-Type: text/html
+Content-ID: <frame-6A961A1913AAC6A13CFAD12EFAE187BB@mhtml.blink>
+Content-Transfer-Encoding: binary
+Content-Location: https://networks-one.vercel.app/
+
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="cid:css-eb72ba23-ce01-4c15-ace5-0a0d5554ada9@mhtml.blink" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>code-copy-cheat-sheet</title>
+    <meta name="description" content="Lovable Generated Project">
+    <meta name="author" content="Lovable">
+
+    <meta property="og:title" content="code-copy-cheat-sheet">
+    <meta property="og:description" content="Lovable Generated Project">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@lovable_dev">
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
+    
+    <link rel="stylesheet" crossorigin="" href="https://networks-one.vercel.app/assets/index-DrgGTvux.css">
+  </head>
+
+  <body>
+    <div id="root"><div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;"><ol tabindex="-1" class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"></ol></div><div class="min-h-screen bg-gray-100"><header class="bg-slate-800 text-white py-4 px-6 flex justify-between items-center"><h1 class="text-xl font-bold">Code Reference</h1><nav><ul class="flex space-x-6"><li><a class="hover:text-blue-300 transition-colors" href="https://networks-one.vercel.app/">Code Snippets</a></li><li><a class="hover:text-blue-300 transition-colors" href="https://networks-one.vercel.app/pdf">PDF Notes</a></li></ul></nav></header><main class="container mx-auto px-4 py-8"><h1 class="text-3xl font-bold mb-8 text-center text-slate-800">Code Reference Library</h1><p class="text-center mb-8 text-slate-600 max-w-2xl mx-auto">Quick access to common code snippets for your reference. Click the copy icon to copy the code to your clipboard.</p><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"><div class="bg-slate-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"><div class="bg-slate-700 text-white px-4 py-2 flex justify-between items-center"><h3 class="font-medium"> ERROR DETECTION / ERROR CORRECTION USING HAMMING CODE</h3><button class="p-1 rounded-md bg-slate-600 hover:bg-slate-500 transition-colors" title="Copy to clipboard"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-copy"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path><path d="M16 4h2a2 2 0 0 1 2 2v4"></path><path d="M21 14H11"></path><path d="m15 10-4 4 4 4"></path></svg></button></div><pre class="p-4 text-sm overflow-x-auto bg-slate-100 border-l-4 border-blue-500"><code>import java.io.*; 
+import java.util.*; 
+class HammingCode 
+{ 
+public static void main(String arg[]) 
+{ 
+Scanner sc=new Scanner(System.in); 
+System.out.println("Enter the 7-bit data code"); 
+int d[]=new int[7]; 
+for(int i=0;i&lt;7;i++) 
+{ 
+d[i]=sc.nextInt(); 
+} 
+int p[]=new int[4];p[0]=d[0]^d[1]^d[3]^d[4]^d[6]; 
+p[1]=d[0]^d[2]^d[3]^d[5]^d[6]; 
+p[2]=d[1]^d[2]^d[3]; 
+p[3]=d[4]^d[5]^d[6]; 
+int c[]=new int[11]; 
+System.out.println("Complete Code Word is "); 
+c[0]=p[0]; 
+c[1]=p[1]; 
+c[2]=d[0]; 
+c[3]=p[2]; 
+c[4]=d[1]; 
+c[5]=d[2]; 
+c[6]=d[3]; 
+c[7]=p[3]; 
+c[8]=d[4]; 
+c[9]=d[5]; 
+c[10]=d[6]; 
+for(int i=0; i&lt;11;i++) 
+{ 
+System.out.print(c[i]+ " "); 
+} 
+System.out.println(); 
+System.out.println("Enter the Received codeword"); 
+int r[]=new int[11]; 
+for(int i=0;i&lt;11;i++) 
+{ 
+r[i]=sc.nextInt(); 
+}int pr[]=new int[4]; 
+int rd[]=new int[7]; 
+pr[0]=r[0]; 
+pr[1]=r[1]; 
+rd[0]=r[2]; 
+pr[2]=r[3]; 
+rd[1]=r[4]; 
+rd[2]=r[5]; 
+rd[3]=r[6]; 
+pr[3]=r[7]; 
+rd[4]=r[8]; 
+rd[5]=r[9]; 
+rd[6]=r[10]; 
+int s[]=new int[4]; 
+s[0]=pr[0]^rd[0]^rd[1]^rd[3]^rd[4]^rd[6]; 
+s[1]=pr[1]^rd[0]^rd[2]^rd[3]^rd[5]^rd[6]; 
+s[2]=pr[2]^rd[1]^rd[2]^rd[3]; 
+s[3]=pr[3]^rd[4]^rd[5]^rd[6]; 
+int dec=(s[0]*1)+(s[1]*2)+(s[2]*4)+(s[3]*8); 
+if(dec==0) 
+System.out.println("No error"); 
+else 
+{ 
+System.out.println("Error is at "+dec); 
+if(r[dec-1]==0) 
+r[dec-1]=1; 
+else 
+r[dec-1]=0;} 
+System.out.println("Corrected code word is : "); 
+for(int i=0;i&lt;11;i++) 
+System.out.print(r[i]+" "); 
+System.out.println(); 
+} 
+}</code></pre></div><div class="bg-slate-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"><div class="bg-slate-700 text-white px-4 py-2 flex justify-between items-center"><h3 class="font-medium"> IMPLEMENTATION OF STOP AND WAIT PROTOCOL</h3><button class="p-1 rounded-md bg-slate-600 hover:bg-slate-500 transition-colors" title="Copy to clipboard"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-copy"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path><path d="M16 4h2a2 2 0 0 1 2 2v4"></path><path d="M21 14H11"></path><path d="m15 10-4 4 4 4"></path></svg></button></div><pre class="p-4 text-sm overflow-x-auto bg-slate-100 border-l-4 border-blue-500"><code>import java.io.*; 
+import java.net.*; 
+import java.util.Scanner; 
+public class StopWaitSender{ 
+public static void main(String[] args)throws IOException{ 
+String packet,ack,str, msg=""; 
+int n,i=0,sequence=0; 
+ServerSocket ss = new ServerSocket(2004); 
+Socket s = ss.accept(); 
+Scanner br=new Scanner(System.in); 
+Scanner msgfromReceiver = new Scanner(s.getInputStream()); 
+PrintStream dos = new PrintStream(s.getOutputStream()); 
+System.out.println("Waiting for Connection....");str= msgfromReceiver.nextLine(); 
+    System.out.println("reciver    &gt; "+str); 
+    System.out.println("Enter the data to send...."); 
+    packet=br.nextLine(); 
+    n=packet.length(); 
+    while(i&lt;n+1) 
+    { 
+            if(i&lt;n){ 
+                msg=String.valueOf(sequence); 
+                msg=msg.concat(packet.substring(i,i+1)); 
+            } 
+            else if(i==n){ 
+                msg="end"; 
+                dos.println(msg); 
+                break; 
+            } 
+            dos.println(msg); 
+            /* 
+                changing sequence number since data sent 
+            */ 
+            sequence=(sequence==0)?1:0; 
+            System.out.println("data sent&gt; "+msg); 
+            ack=msgfromReceiver.nextLine(); 
+            System.out.println("waiting for ack.....
+"); 
+            if(ack.equals(String.valueOf(sequence))){ 
+                i++; 
+                System.out.println("receiver    &gt;  "+" packet recieved
+"); 
+            }  else{      /* whenever ack lost or wrong ack we      
+   change the sequence number*/ 
+                System.out.println("Time out resending data....
+"); 
+                sequence=(sequence==0)?1:0; 
+            } 
+    } 
+    System.out.println("All data sent. exiting."); 
+     s.close(); 
+    } 
+} 
+ 
+//RECEIVER PROGRAM 
+import java.io.*; 
+import java.net.*; 
+import java.util.Scanner; 
+class StopWaitReceiver{ 
+    public static void main(String[] args)throws IOException{ 
+    String packet,data=""; 
+    int i=0; 
+    int sequence=0;    
+    Socket s = new Socket("localhost",2004); 
+    PrintStream dos = new PrintStream(s.getOutputStream()); 
+    Scanner msgfromSender = new Scanner(s.getInputStream()); 
+        System.out.println("Connection established     :"); 
+        dos.println("Connected"); 
+        while(true) 
+        { 
+            packet=msgfromSender.nextLine(); 
+            if(!packet.equals("end")) 
+  { 
+            if(Integer.valueOf(packet.substring(0,1))==sequence){ 
+                data+=packet.substring(1); 
+                sequence=(sequence==0)?1:0; 
+                System.out.println("
+
+receiver    &gt;"+packet); 
+            }else{ 
+                System.out.println("
+
+receiver    &gt;"+packet +"   duplicate data"); 
+            } 
+            dos.println(String.valueOf(sequence));i++; 
+            System.out.println("Data recived= "+data); 
+            } 
+            else 
+            { 
+                dos.println("connection ended    ."); 
+                s.close(); 
+                break; 
+            } 
+        }        
+    } 
+}</code></pre></div><div class="bg-slate-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"><div class="bg-slate-700 text-white px-4 py-2 flex justify-between items-center"><h3 class="font-medium"> IMPLEMENTATION OF SLIDING WINDOW PROTOCOL </h3><button class="p-1 rounded-md bg-slate-600 hover:bg-slate-500 transition-colors" title="Copy to clipboard"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-copy"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path><path d="M16 4h2a2 2 0 0 1 2 2v4"></path><path d="M21 14H11"></path><path d="m15 10-4 4 4 4"></path></svg></button></div><pre class="p-4 text-sm overflow-x-auto bg-slate-100 border-l-4 border-blue-500"><code>import java.io.*; 
+import java.net.*; 
+import java.util.Scanner; 
+public class SWsender 
+{ 
+public static void main(String args[])throws IOException 
+{ 
+int SWS=8; //Sender window size 
+int LAR=0; //Sequence number of the last acknowledgement received 
+int LFS=0; //Sequence number of the last frame sent 
+ServerSocket ss=new ServerSocket(500); 
+Socket s=ss.accept(); 
+System.out.println("Type your Message..."); 
+Scanner msgfromReceiver=new Scanner(s.getInputStream()); 
+PrintStream p=new PrintStream(s.getOutputStream()); 
+while(true) 
+{ 
+int i=0,j=0; 
+Scanner msgtoReceiver = new Scanner(System.in); 
+String t = msgtoReceiver.nextLine(); 
+if(t.trim().toLowerCase().equals("quit")){ 
+p.println(t); 
+System.exit(0); 
+} 
+char c[]=new char[100]; 
+c=t.toCharArray(); 
+int sent=1; 
+while(i&lt;t.length()) 
+{ 
+while(i&lt;t.length()&amp;&amp;i&lt;SWS*sent) 
+{ 
+if(LFS-LAR&lt;=SWS) 
+{ 
+p.println(c[i]); 
+LFS++; 
+System.out.println("sent= "+c[i++]+" Successfully"); 
+} 
+} 
+while(j&lt;t.length()&amp;&amp;j&lt;SWS*sent) 
+{ 
+String t1=msgfromReceiver.nextLine(); 
+System.out.println(t1); 
+j++; 
+LAR++; 
+} 
+sent++; 
+System.out.println(); 
+}} 
+} 
+} 
+//RECEIVER PROGRAM 
+import java.io.*; 
+import java.net.*; 
+import java.util.Scanner; 
+public class SWreceiver 
+{ 
+public static void main(String args[])throws IOException 
+{ 
+int RWS=8; //Receiver window size 
+int LAF=0; //Sequence number of largest acceptable frame 
+int LFR=0; //Sequence number of last frame received 
+InetAddress obj=InetAddress.getLocalHost(); 
+Socket s=new Socket(obj,500); 
+Scanner msgfromSender = new Scanner(s.getInputStream()); 
+PrintStream p=new PrintStream(s.getOutputStream()); 
+while(true) 
+{ 
+int i=0; 
+while(i&lt;RWS) 
+{ 
+String t; 
+if(LAF-LFR&lt;=RWS) 
+{t=msgfromSender.nextLine(); 
+if(t.equals("quit")) 
+System.exit(0); 
+System.out.println("received "+t+" Successfully"); 
+LFR++; 
+p.println("Acknowledgement for "+t); 
+LAF++; 
+} 
+i++; 
+} 
+System.out.println(); 
+} 
+} 
+}</code></pre></div><div class="bg-slate-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"><div class="bg-slate-700 text-white px-4 py-2 flex justify-between items-center"><h3 class="font-medium"> STUDY OF SOCKET PROGRAMMING (CLIENT-SERVER MODEL)</h3><button class="p-1 rounded-md bg-slate-600 hover:bg-slate-500 transition-colors" title="Copy to clipboard"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-copy"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path><path d="M16 4h2a2 2 0 0 1 2 2v4"></path><path d="M21 14H11"></path><path d="m15 10-4 4 4 4"></path></svg></button></div><pre class="p-4 text-sm overflow-x-auto bg-slate-100 border-l-4 border-blue-500"><code>import java.io.*; 
+import java.net.*; 
+import java.util.Scanner; 
+class tcp1server 
+{ 
+public static void main(String a[])throws IOException 
+{ 
+ServerSocket ss=new ServerSocket(8000); 
+//Opens the socket 
+Socket s=ss.accept();  
+Scanner in = new Scanner(System.in); 
+PrintStream dos=new PrintStream(s.getOutputStream()); 
+while(true) 
+{ 
+System.out.println("enter message to send:"); 
+//Reads the input from the input device 
+String str=in.nextLine(); 
+dos.println(str);  
+//checks for end of message 
+if(str.equals("end")) 
+{//Closes the socket 
+ss.close(); 
+break; 
+} 
+} 
+} 
+} 
+//CLIENT PROGRAM 
+import java.io.*; 
+import java.net.*; 
+import java.util.Scanner; 
+class tcp1client 
+{ 
+public static void main(String args[])throws IOException 
+{ 
+Socket s=new Socket("localHost",8000); 
+//Used to get input from keyword 
+Scanner in = new Scanner(s.getInputStream()); 
+while(true) 
+{ 
+// Reads the input from keybroad 
+String str=in.nextLine(); 
+System.out.println("Message Received:"+str); 
+if(str.equals("end")) 
+{ 
+//Close the socket 
+s.close(); 
+break; } 
+} 
+} 
+} </code></pre></div><div class="bg-slate-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"><div class="bg-slate-700 text-white px-4 py-2 flex justify-between items-center"><h3 class="font-medium"> SOCKET PROGRAM FOR ECHO CLIENT AND ECHO SERVER COMMANDS</h3><button class="p-1 rounded-md bg-slate-600 hover:bg-slate-500 transition-colors" title="Copy to clipboard"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-copy"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path><path d="M16 4h2a2 2 0 0 1 2 2v4"></path><path d="M21 14H11"></path><path d="m15 10-4 4 4 4"></path></svg></button></div><pre class="p-4 text-sm overflow-x-auto bg-slate-100 border-l-4 border-blue-500"><code>//SERVER PROGRAM 
+import java.io.*; 
+import java.net.*; 
+import java.util.Scanner; 
+public class echoserver 
+{ 
+public static void main(String args[])throws IOException 
+{ 
+ServerSocket ss=new ServerSocket(500); 
+Socket s=ss.accept(); 
+System.out.println("Server is ready"); 
+DataInputStream dis=new DataInputStream(s.getInputStream()); 
+Scanner msgfromClient = new Scanner(s.getInputStream()); 
+PrintStream p=new PrintStream(s.getOutputStream()); 
+while(true) 
+{ 
+String t=msgfromClient.nextLine(); 
+if(t==null) 
+break; System.out.println(t); 
+p.println(t); 
+} 
+} 
+} 
+//CLIENT PROGRAM 
+import java.io.*; 
+import java.net.*; 
+import java.util.Scanner; 
+public class echoclient 
+{ 
+public static void main(String args[])throws IOException 
+{ 
+InetAddress obj=InetAddress.getLocalHost(); 
+Socket s=new Socket(obj,500); 
+Scanner msgfromServer = new Scanner(s.getInputStream()); 
+PrintStream p=new PrintStream(s.getOutputStream()); 
+System.out.println("TYPE YOUR MESSAGE TO SERVER AND TYPE QUIT TO EXIT"); 
+while(true) 
+{ 
+String t=new Scanner(System.in).nextLine(); 
+if(t.equals("quit")) 
+{ 
+p.close(); 
+System.exit(0); 
+} 
+else 
+{ p.println(t); 
+t=msgfromServer.nextLine(); 
+System.out.println(t); 
+} 
+} 
+} 
+} </code></pre></div><div class="bg-slate-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"><div class="bg-slate-700 text-white px-4 py-2 flex justify-between items-center"><h3 class="font-medium">SOCKET PROGRAM FOR PING AND TRACE-ROUTE COMMANDS </h3><button class="p-1 rounded-md bg-slate-600 hover:bg-slate-500 transition-colors" title="Copy to clipboard"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-copy"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path><path d="M16 4h2a2 2 0 0 1 2 2v4"></path><path d="M21 14H11"></path><path d="m15 10-4 4 4 4"></path></svg></button></div><pre class="p-4 text-sm overflow-x-auto bg-slate-100 border-l-4 border-blue-500"><code>import java.io.*; 
+import java.net.*; 
+import java.util.Scanner; 
+class pingserver 
+{ 
+public static void main(String args[]) 
+{ 
+try 
+{ 
+String str; 
+System.out.print(" Enter the IP Address to be Ping : "); 
+Scanner s1 = new Scanner(System.in); 
+String ip=s1.nextLine(); 
+Runtime H=Runtime.getRuntime(); 
+Process p=H.exec("ping " + ip); 
+Scanner s2 = new Scanner(p.getInputStream()); 
+while((str=s2.nextLine())!=null) 
+{System.out.println(" " + str); 
+} 
+} 
+catch(Exception e) 
+{ 
+System.out.println(e.getMessage()); 
+} 
+} 
+} 
+Note: This is exactly same as the Server - Client (Two way).Run the server and then the 
+client 
+//SERVER PROGRAM 
+import java.io.*; 
+import java.net.*; 
+import java.lang.*; 
+import java.util.Scanner; 
+class tcp2server 
+{ 
+public static void main(String a[])throws IOException 
+{ 
+ServerSocket ss=new ServerSocket(8000); 
+//Opens the socket 
+Socket s=ss.accept(); 
+PrintStream dos=new PrintStream(s.getOutputStream()); 
+Scanner msgtoSend = new Scanner(System.in); 
+Scanner msgfromClient = new Scanner(s.getInputStream()); 
+while(true) 
+{ System.out.println("enter the msg to send: "); 
+//Reads the input 
+String str=msgtoSend.nextLine(); 
+dos.println(str); 
+//Checks for end of message 
+if(str.equals("end")) 
+{ 
+//Closes the socket 
+ss.close(); 
+break; 
+} 
+String str1=msgfromClient.nextLine(); 
+System.out.println("msg received"+str1); 
+if(str1.equals("end")) 
+{ 
+ss.close(); 
+break; 
+} 
+} 
+} 
+} 
+//CLIENT PROGRAM 
+import java.io.*; 
+import java.net.*; 
+import java.lang.*; 
+import java.util.Scanner; 
+class tcp2client 
+{ public static void main(String a[])throws IOException 
+{ 
+//Creates object for socket 
+Socket s=new Socket("LocalHost",8000); 
+Scanner msgfromServer=new Scanner(s.getInputStream()); 
+Scanner msgtoSend=new Scanner(System.in); 
+PrintStream dos=new PrintStream(s.getOutputStream()); 
+while(true) 
+{ 
+//Reads the input from the input device 
+String str=msgfromServer.nextLine(); 
+System.out.println("msg received:"+str); 
+//Checks for end of message 
+if(str.equals("end")) 
+{ 
+//Closes the socket 
+s.close(); 
+break; 
+} 
+System.out.println("enter the msg to send: "); 
+//Reads the message to send 
+String str1=msgtoSend.nextLine(); 
+dos.println(str1); 
+//Checks for end of message 
+if(str1.equals("end")) 
+{ //Closes the socket 
+s.close(); 
+break; 
+} 
+} 
+} 
+}</code></pre></div><div class="bg-slate-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"><div class="bg-slate-700 text-white px-4 py-2 flex justify-between items-center"><h3 class="font-medium">ENCRYPTION AND DECRYPTION</h3><button class="p-1 rounded-md bg-slate-600 hover:bg-slate-500 transition-colors" title="Copy to clipboard"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-copy"><rect width="8" height="4" x="
